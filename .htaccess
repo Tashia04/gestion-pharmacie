@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Rediriger toutes les requêtes vers index.php sauf pour les fichiers et dossiers existants
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Forcer la suppression du trailing slash (éviter /login/ au lieu de /login)
+RewriteCond %{REQUEST_URI} /$
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Définir l'encodage des fichiers pour éviter les problèmes de caractères
+AddDefaultCharset UTF-8
+
+# Empêcher l'affichage du contenu du dossier
+Options -Indexes
