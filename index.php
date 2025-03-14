@@ -10,7 +10,12 @@ $routes  = [
   "/signup" => "./pages/signup.php",
   "/categories" => "./pages/affiche_cat.php",
   "/fournisseurs" => "./pages/affiche_fourn.php",
-  "/medicaments" => "./pages/affiche_Med.php"
+  "/medicaments" => "./pages/affiche_Med.php",
+  "/achats" => "./pages/affiche_achat.php",
+  "/admis" => "./pages/admis.php",
+  "/stock" => "./pages/stock.php",
+  "/commandes" => "./pages/affiche_com.php",
+  // "/vente" => "./pages/vente.php
 ];
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
