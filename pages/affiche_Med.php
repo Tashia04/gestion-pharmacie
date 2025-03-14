@@ -37,7 +37,7 @@
 
           <?php
 
-          foreach ($Medicaments as $Medicament): ?>
+          foreach ($Medicaments as $Medicament): ?> 
             <tr>
               <th scope="row"><?= htmlspecialchars($Medicament['id']) ?></th>
               <td><?= htmlspecialchars($Medicament['Nom']) ?></td>
@@ -47,8 +47,14 @@
               <td><?= htmlspecialchars($Medicament['NomCategorie']) ?></td>
               <td>
                 <!-- <a href="#" class="text-info me-2 infobtn" title="Voir détails" data-id=\"$bill->id"\><i class="fas fa-info-circle"></i></a> -->
-                <a href="#" class="text-primary me-2 editbtn" title="Modifier" data-id="$bill->id"><i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#UpdateModal"></i></a>
-                <a href="../''delete.php?id=<?= htmlspecialchars($Medicament['id']) ?>"
+                <a href="#" class="text-primary me-2 editbtn" title="Modifier"
+                  data-id="<?= htmlspecialchars($Medicament['id']) ?>"
+                  data-Nom="<?= htmlspecialchars($Medicament['Nom']) ?>"
+                  data-quantite="<?= htmlspecialchars($Medicament['quantite']) ?>"
+                  data-Prix="<?= htmlspecialchars($Medicament['prix']) ?>"
+                  data-Date_Expiration="<?= htmlspecialchars($Medicament['date_expiration']) ?>"
+                  data-Categorie="<?= htmlspecialchars($Medicament['NomCategorie']) ?>"><i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#UpdateModal"></i></a>
+                <a href="../actions/delete.php?id=<?= htmlspecialchars($Medicament['id']) ?>"
                   class="text-danger deletebtn" title="Supprimer"><i class="fas fa-trash-alt"></i></a>
               </td>
             </tr>
@@ -91,7 +97,7 @@
               <select class="form-select" id="Categorie" name="Categorie" aria-label="Default select example" required>
                 <option value="" selected>Sélectionnez une catégorie</option>
                 <?php
-                $categories = getAllCategories();
+                $categories = getAllCategories($pdo);
                 foreach ($categories as $categorie): ?>
                   <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['NomCategorie']) ?></option>
                 <?php endforeach; ?>
@@ -137,7 +143,7 @@
               <select class="form-select" id="update-Categorie" name="Categorie" aria-label="Default select example" required>
                 <option value="" selected>Sélectionnez une catégorie</option>
                 <?php
-                $categories = getAllCategories();
+                $categories = getAllCategories($pdo);
                 foreach ($categories as $categorie): ?>
                   <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['NomCategorie']) ?></option>
                 <?php endforeach; ?>
@@ -156,20 +162,14 @@
 <script>
   document.querySelectorAll('.editbtn').forEach(item => {
     item.addEventListener('click', function() {
+      document.getElementById('update-id').value = this.dataset.id;
+      document.getElementById('update-Nom').value = this.dataset.Nom;
+      document.getElementById('update-Quantite').value = this.dataset.quantite;
+      document.getElementById('update-Prix').value = this.dataset.prix;
+      document.getElementById('update-Date_Expiration').value = this.dataset.date_expiration;
+      document.getElementById('update-Categorie').value = this.dataset.Categorie;
+     
 
-        document.getElementById('update-id').value = data.id;
-        document.getElementById('update-Nom').value = data.Nom;
-        document.getElementById('update-Quantite').value = data.quantite;
-        document.getElementById('update-Prix').value = data.prix;
-        document.getElementById('update-Date_Expiration').value = data.date_expiration;
-        document.getElementById('update-Categorie').value = data.Categorie;
-      })
-      .catch(error => console.error('Error:', error));
-  });
-
-
-  $(function() {
-    $("table").DataTable();
-    // inserer une nouvelle fournisseur
+    });
   });
 </script>

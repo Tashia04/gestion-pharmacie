@@ -36,7 +36,7 @@
                   <a class="editbtn editbtn1" title="Modifier" data-categorie="<?= htmlspecialchars($categorie['NomCategorie']) ?>" data-id="<?= htmlspecialchars($categorie['id']) ?>">
                     <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#UpdateModal"></i>
                   </a>
-                  <a href="../actions/delete_cat.php ?id=<?= htmlspecialchars($categorie['id']) ?>" class="text-danger deletecatbtn" title="Supprimer">
+                  <a href="../actions/delete_cat.php?id=<?= htmlspecialchars($categorie['id']) ?>" class="text-danger deletecatbtn" title="Supprimer">
                     <i class="fas fa-trash-alt"></i>
                   </a>
                 </td>
@@ -60,11 +60,11 @@
           <form action="../actions/ajout_cat.php" method="POST">
             <div class="mb-3">
               <label for="create-categorie" class="form-label">Nom de la Catégorie</label>
-              <input type="text" class="form-control" id="create-categorie" name="NomCategorie" required>
+              <input type="text" class="form-control" id="create-categorie" name="nom" required>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-              <button type="submit" class="btn btn-primary">Ajouter</button>
+              <button type="submit" class="btn btn-primary" name="Ajouter">Ajouter</button>
             </div>
           </form>
         </div>

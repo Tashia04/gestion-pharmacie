@@ -1,6 +1,8 @@
 <?php
 
 include_once '../database/fonctions.php';
+require_once '../database/connexion.php';
+
 
 
 // Récupération des données du formulaire
@@ -17,7 +19,7 @@ if (isset($_POST['Ajouter'])) {
   if (!empty($nom) && !empty($adresse) && !empty($telephone) && !empty($email) && !empty($produits_fournis)) {
     try {
 
-      $executed = addFournisseur($nom, $adresse, $telephone, $email, $produits_fournis);
+      $executed = addFournisseur($nom, $adresse, $telephone, $email, $produits_fournis, $pdo);
 
 
       // Vérification du résultat

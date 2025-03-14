@@ -1,6 +1,7 @@
 <?php
 
 include_once '../database/fonctions.php';
+require_once '../database/connexion.php';
 
 
 // Récupération des données du formulaire
@@ -15,7 +16,7 @@ if (isset($_POST['Ajouter'])) {
   if (!empty($nom) && $quantite > 0 && $prix > 0 && !empty($date_expiration) && !empty($Nomcategorie)) {
     try {
 
-      $executed = addMedicament($nom, $quantite, $prix, $date_expiration, $Nomcategorie);
+      $executed = addMedicament($nom, $quantite, $prix, $date_expiration, $Nomcategorie, $pdo);
 
 
       // Vérification du résultat

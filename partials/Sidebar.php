@@ -12,19 +12,19 @@
   <div class="dropdown-divider"></div>
 
   <!-- Navigation -->
-  <a href="#" class="navbar-brand">Santé&Vie</a>
+  <a href="/" class="navbar-brand">Santé&Vie</a>
   <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i> Administration</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users"></i> Utilisateurs</a></li>
+    <!-- <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-cogs"></i> Administration</a></li> -->
+    <li class="nav-item"><a class="nav-link" href="/admis"><i class="fas fa-users"></i> Utilisateurs</a></li>
     <li class="nav-item"><a class="nav-link" href="/categories"><i class="fas fa-th-large"></i> Catégories</a></li>
     <li class="nav-item"><a class="nav-link" href="/medicaments"><i class="fas fa-capsules"></i> Produits</a></li>
-    <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-cart-arrow-down"></i> Achats</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cart-arrow-up"></i> Ventes</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-boxes"></i> Stock</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users-cog"></i> Clients</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-hand-holding-heart"></i> Mutuelle</a></li>
+    <li class="nav-item"><a class="nav-link" href="/achats"><i class="fas fa-cart-arrow-down"></i> Achats</a></li>
+    <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-cart-arrow-up"></i> Ventes</a></li>
+    <li class="nav-item"><a class="nav-link" href="/stock"><i class="fas fa-boxes"></i> Stock</a></li>
+    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users-cog"></i> Clients</a></li> -->
+    <li class="nav-item"><a class="nav-link" href="/commandes"><i class="fas fa-hand-holding-heart"></i> Commande</a></li>
     <li class="nav-item"><a class="nav-link" href="/fournisseurs"><i class="fas fa-truck"></i> Fournisseur</a></li>
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Rapport</a></li>
+    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Rapport</a></li> -->
     <li class="nav-item mt-auto"><a class="nav-link" href="../actions/logoutAction.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
   </ul>
 </aside>

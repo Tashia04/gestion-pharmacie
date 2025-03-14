@@ -145,13 +145,14 @@
     </div>
   </div>
   </div>
-  
+
 </main>
 <script>
   const updateForm = document.getElementById("editForm");
   const editBtn = document.querySelectorAll(".editbtn");
   editBtn.forEach(btn => {
     btn.addEventListener("click", function(e) {
+      updateForm.querySelector("#update-id").value = btn.dataset.id;
       updateForm.querySelector("#update-Nom").value = btn.dataset.nom;
       updateForm.querySelector("#update-adresse").value = btn.dataset.adresse;
       updateForm.querySelector("#update-telephone").value = btn.dataset.telephone;

@@ -1,4 +1,5 @@
 <?php
+// Inclure la connexion PDO
 include_once '../database/fonctions.php';
 $host = 'localhost';
 $dbname = 'inscription';
@@ -12,26 +13,21 @@ if (!$pdo) {
 }
 
 
-
-
-// Vérifier si un ID est passé dans l'URL
 if (isset($_GET['id'])) {
   $id = (int) $_GET['id']; // Assurez-vous que l'ID est un entier
   echo ($id);
-
-
   try {
     // Préparer et exécuter la requête de suppression
-    $sql = "DELETE FROM categories WHERE id = :id";
+    $sql = "DELETE FROM users WHERE id_user = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':id' => $id]);
 
     // Vérification du succès de la suppression
     if ($stmt->rowCount() > 0) {
-      header('Location: /categories'); // Redirection après succès
+      header('Location:/admis'); // Redirection après succès
       exit;
     } else {
-      echo "Erreur : aucune catégorie trouvée avec cet ID.";
+      echo "Erreur : aucun admis trouvé avec cet ID.";
     }
   } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();

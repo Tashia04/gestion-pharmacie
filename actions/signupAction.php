@@ -1,6 +1,7 @@
 <?php
+include_once '../database/connexion.php';
+include_once '../database/fonctions.php';
 
-require "../database/connexion.php";
 // Validation du formulaire
 if (isset($_POST['valide'])) {
   //Verifie si l'users a bien Completé tous les champs 
@@ -36,7 +37,7 @@ if (isset($_POST['valide'])) {
 
 
       // Rediriger l'users dans la page d'accueil
-      header('Location:./pages/login.php');
+      header('Location: ../index.php');
     } else {
       $errorMsg = "L'utilisateur existe deja sur le site";
     }

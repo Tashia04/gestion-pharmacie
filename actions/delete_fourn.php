@@ -1,6 +1,7 @@
 <?php
 // Inclure la connexion PDO
 require_once '../database/connexion.php';
+require_once '../database/connexion.php';
 
 // Vérifier si un ID est passé dans l'URL
 if (isset($_GET['id_fourn'])) {

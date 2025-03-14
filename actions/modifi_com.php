@@ -2,22 +2,22 @@
 include_once '../database/connexion.php';
 include_once '../database/fonctions.php';
 
-
-
 // Gérer la modification
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Récupérer les données envoyées via le formulaire
-  $idCategorie = $_POST['id'] ?? null; // Correction de $_POSTT -> $_POST
-  $nomCategorie = $_POST['NomCategorie'] ?? null;
+  $id = $_POST['id'] ?? null;
+  $id_fourn = $_POST['id_fourn'] ?? null;
+  $statut = $_POST['statut'] ?? null;
+  $total = $_POST['total'] ?? null;
 
-  if ($idCategorie && $nomCategorie) {
+  if ($idCommande && $idFournisseur && $statut && $total) {
     try {
-      // Appeler la fonction pour mettre à jour la catégorie
-      $executed = updateCategorie($idCategorie, $nomCategorie, $pdo); // Correction de updateUtilisateur -> updateCategorie
+      // Appeler la fonction pour mettre à jour la commande
+      $executed = updateCommande($id, $idFournisseur, $statut, $total, $pdo);
 
       if ($executed) {
         // Afficher un message de confirmation
-        echo "<script>alert('La catégorie a été mise à jour avec succès');</script>";
+        echo "<script>alert('La commande a été mise à jour avec succès');</script>";
       } else {
         echo "<script>alert('La mise à jour a échoué.');</script>";
       }
@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 echo "<script>
   window.onload = function() {
-    window.location.href = '/categories';
+    window.location.href = '/commandes';
   }
 </script>";
+?>

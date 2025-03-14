@@ -1,6 +1,7 @@
 <?php
 
 require_once '../database/connexion.php';
+require_once '../database/connexion.php';
 
 // Validation du formulaire
 if (isset($_POST['submit'])) {

@@ -1,7 +1,7 @@
 <div class="wrapper">
   <section class="form sign up">
     <h1>INSCRIPTION</h1>
-    <form method="POST" action="./actions/signupAction.php">
+    <form method="POST" action="../actions/signupAction.php">
       <?php
       if (isset($errorMsg)) {
         echo '<p class="text-danger text-center">' . htmlspecialchars($errorMsg) . '</p>';
